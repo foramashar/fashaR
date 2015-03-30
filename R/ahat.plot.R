@@ -43,5 +43,6 @@ ahat.plot=function (x,genderdiffvector){
 			lines(cbind(rep(i+0.4, 2), ahat[i] + qnorm(c(0.05/2, 1-0.05/2)) * aSE[i]), col = "grey")
 		}
 	})
-	addtable2plot.new("bottom", table=test.table, display.rownames=T,display.colnames=T, hlines=T, bg=c(rep(c("forestgreen","blue","deeppink"),each=(nrow(test.table)-1)/3),"white"), text.col= c(rep("white", (nrow(test.table)-1)),"black"), cex=0.9, xpad=0.5)
+        addtable2plot.new("bottom", table=test.table, display.rownames=T,display.colnames=T, hlines=T, bg=c(rep(c("forestgreen","blue","deeppink"),each=(nrow(test.table)-1)/3),"white"), text.col= c(rep("white", (nrow(test.table)-1)),"black"), cex=0.9, xpad=0.5)
+	return(test.table)
 }
