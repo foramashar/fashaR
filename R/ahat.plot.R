@@ -1,16 +1,14 @@
 #' Function to make the Ahat plot for genetic enrichment analyses
 #' Builds on grs.summary function from package gtx
 #' 
-#' @param x input data frame of results from grs.summary at different Pval cutoffs
-#' @param genderdiffvector optional list of pvalue for difference in ahat by sex
+#' @param x Input data frame of results from grs.summary at different Pval cutoffs.
+#' @param genderdiffvector Optional list of pvalue for difference in ahat by sex.
 #' 
 #' @export
 #'
 #' @seealso gtx, grs.plot
-#' @examples
-#' with(test, grs.plot.new(get(paste("Effect",trait, sep=".")), AdjustedSCD.Effect, StdErr,Freq1, col.by="af"))
 
-function (x, genderdiffvector ){
+aha.plot=function (x,genderdiffvector){
 	test=as.data.frame(t(x))
 	test$group=gsub("\\..+","",row.names(test))
 	ylimmax=max(test$ahat+qnorm(1-0.05/2)*test$aSE)

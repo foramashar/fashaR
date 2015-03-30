@@ -1,8 +1,20 @@
- addtable2plot.new=
-function (x, y = NULL, table, lwd = par("lwd"), bty = "n", bg = par("bg"), 
-    cex = 1, xjust = 0, yjust = 1, xpad = 0.1, ypad = 0.5, box.col = par("fg"), 
-    text.col = par("fg"),col.rowname = par("fg"),col.colname = par("fg"), display.colnames = TRUE, display.rownames = FALSE, 
-    hlines = FALSE, vlines = FALSE, title = NULL, text.font=NULL) 
+#' Updated function to add plot to table
+#'
+#' @param x Numeric vectors for position coord.
+#' @param y Numeric vectors for position coord.
+#' @param table Data table to add. 
+#' @param lwd,bty,bg,cex,xjust,yjust,xpad,ypad See par for details.
+#' @param box.col,text.col,col.rowname,col.colname Details for color of bg and text for different aspects
+#' @param display.colnames,display.rownames Logical vectors for whether row and column names should be displayed.
+#' @param hlines,vlines Logical vectors for whether table should have horizontal and vertical lines.
+#' @param title Value for table header.
+#' @param text.font See par for details on font.
+#' @export
+#'
+#' @seealso plotrix
+#'
+
+addtable2plot.new=function (x, y = NULL, table, lwd = par("lwd"), bty = "n", bg = par("bg"), cex = 1, xjust = 0, yjust = 1, xpad = 0.1, ypad = 0.5, box.col = par("fg"), text.col = par("fg"),col.rowname = par("fg"),col.colname = par("fg"), display.colnames = TRUE, display.rownames = FALSE, hlines = FALSE, vlines = FALSE, title = NULL, text.font=NULL) 
 {
     if (dev.cur() == 1) 
         stop("Cannot add table unless a graphics device is open")
@@ -30,7 +42,7 @@ function (x, y = NULL, table, lwd = par("lwd"), bty = "n", bg = par("bg"),
         vlines <- FALSE
     if (is.null(dim(bg))) 
         bg <- matrix(bg, nrow = tabdim[1], ncol = tabdim[2])
-	if (is.null(dim(text.col))) 
+	if (is.null(dim(text.col))) s
         text.col <- matrix(text.col, nrow = tabdim[1], ncol = tabdim[2])	
     column.names <- colnames(table)
     if (is.null(column.names) && display.colnames) 
