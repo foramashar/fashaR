@@ -5,13 +5,12 @@
 #' @param genderdiffvector Optional list of pvalue for difference in ahat by sex.
 #' 
 #' @export
-#'
 #' @seealso gtx, grs.plot
-
 ahat.plot=function (x,genderdiffvector){
 	test=as.data.frame(t(x))
 	test$group=gsub("\\..+","",row.names(test))
 	ylimmax=max(test$ahat+qnorm(1-0.05/2)*test$aSE)
+	ylimmin=min(test$ahat-qnorm(1-0.05/2)*test$aSE)
 	testcombined=with(subset(test,group=="combined"), rbind(m, prettyNum(ahat, digits=2), prettyNum(R2rs, digits=2),  prettyNum(pval, digits=3),prettyNum(phet, digits=3)))
 	if ("male" %in% test$group) {
 		testmale=with(subset(test,group=="male"), rbind(m, prettyNum(ahat, digits=2), prettyNum(R2rs, digits=2),  prettyNum(pval, digits=3),prettyNum(phet, digits=3)))
@@ -23,7 +22,7 @@ ahat.plot=function (x,genderdiffvector){
 	colnames(test.table)=gsub(paste("combined",trait,"scd.", sep="."),"",row.names(subset(test[order(test$m),], group=="combined")))
 	with(subset(test[order(test$m),], group=="combined"), {
 		axislabels=gsub(paste("combined",trait,"scd.", sep="."),"",row.names(subset(test[order(test$m),], group=="combined")))
-		plot(ahat, pch=19, col="forestgreen", ylim=ylimtable[,trait],xlim=c(0.5,length(axislabels)+1),xlab="Alpha Cutoff", cex.lab=1.2,xaxt="n",main=paste("GRS--",toupper(trait),"in SCD"))
+		plot(ahat, pch=19, col="forestgreen",ylim=c(ylimmin, ylimmax), xlim=c(0.5,length(axislabels)+1),xlab="Alpha Cutoff", cex.lab=1.2,xaxt="n",main=paste("GRS--",toupper(trait),"in SCD"))
 		axis(1,at=(1:length(axislabels))+0.2,labels=axislabels)
 		for (i in 1:length(axislabels)) {
 			lines(cbind(rep(i, 2), ahat[i] + qnorm(c(0.05/2, 1-0.05/2)) * aSE[i]), col = "grey")
