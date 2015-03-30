@@ -8,7 +8,7 @@
 #'
 #' @seealso gtx, grs.plot
 
-aha.plot=function (x,genderdiffvector){
+ahat.plot=function (x,genderdiffvector){
 	test=as.data.frame(t(x))
 	test$group=gsub("\\..+","",row.names(test))
 	ylimmax=max(test$ahat+qnorm(1-0.05/2)*test$aSE)
