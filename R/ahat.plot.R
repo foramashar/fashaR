@@ -12,6 +12,7 @@ ahat.plot=function (x,genderdiffvector, text.cex=0.9){
 	test$group=gsub("\\..+","",row.names(test))
 	ylimmax=max(test$ahat+qnorm(1-0.05/2)*test$aSE)
 	ylimmin=min(test$ahat-qnorm(1-0.05/2)*test$aSE)*2
+	if (ylimmin > -0.5) {ylimmin=-0.5}
 	testcombined=with(subset(test,group=="combined"), rbind(m, prettyNum(ahat, digits=2), prettyNum(R2rs, digits=2),  prettyNum(pval, digits=3),prettyNum(phet, digits=3)))
 	if ("male" %in% test$group) {
 		testmale=with(subset(test,group=="male"), rbind(m, prettyNum(ahat, digits=2), prettyNum(R2rs, digits=2),  prettyNum(pval, digits=3),prettyNum(phet, digits=3)))
