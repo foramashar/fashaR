@@ -6,11 +6,12 @@
 #' 
 #' @export
 #' @seealso gtx, grs.plot
-ahat.plot=function (x,genderdiffvector){
+
+ahat.plot=function (x,genderdiffvector, text.cex=0.9){
 	test=as.data.frame(t(x))
 	test$group=gsub("\\..+","",row.names(test))
 	ylimmax=max(test$ahat+qnorm(1-0.05/2)*test$aSE)
-	ylimmin=min(test$ahat-qnorm(1-0.05/2)*test$aSE)
+	ylimmin=min(test$ahat-qnorm(1-0.05/2)*test$aSE)*2
 	testcombined=with(subset(test,group=="combined"), rbind(m, prettyNum(ahat, digits=2), prettyNum(R2rs, digits=2),  prettyNum(pval, digits=3),prettyNum(phet, digits=3)))
 	if ("male" %in% test$group) {
 		testmale=with(subset(test,group=="male"), rbind(m, prettyNum(ahat, digits=2), prettyNum(R2rs, digits=2),  prettyNum(pval, digits=3),prettyNum(phet, digits=3)))
@@ -43,6 +44,6 @@ ahat.plot=function (x,genderdiffvector){
 			lines(cbind(rep(i+0.4, 2), ahat[i] + qnorm(c(0.05/2, 1-0.05/2)) * aSE[i]), col = "grey")
 		}
 	})
-        addtable2plot.new("bottom", table=test.table, display.rownames=T,display.colnames=T, hlines=T, bg=c(rep(c("forestgreen","blue","deeppink"),each=(nrow(test.table)-1)/3),"white"), text.col= c(rep("white", (nrow(test.table)-1)),"black"), cex=0.9, xpad=0.5)
+        addtable2plot.new("bottom", table=test.table, display.rownames=T,display.colnames=T, hlines=T, bg=c(rep(c("forestgreen","blue","deeppink"),each=(nrow(test.table)-1)/3),"white"), text.col= c(rep("white", (nrow(test.table)-1)),"black"), cex=text.cex, xpad=0.5)
 	return(test.table)
 }

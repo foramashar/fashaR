@@ -5,7 +5,7 @@
 \title{Function to make the Ahat plot for genetic enrichment analyses
 Builds on grs.summary function from package gtx}
 \usage{
-ahat.plot(x, genderdiffvector)
+ahat.plot(x, genderdiffvector, text.cex = 0.9)
 }
 \arguments{
 \item{x}{Input data frame of results from grs.summary at different Pval cutoffs.}
