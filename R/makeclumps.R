@@ -1,3 +1,10 @@
+#' Function to make the SNP clumps at different Pvalue cutoffs
+#' 
+#' @param trait Trait to compare SCD results to
+#' 
+#' @export
+#' @seealso gtx, grs.plot
+
 makeclumps=function(trait){
 i=5e-8
 	system(paste("plink2 --bfile /dcs01/arking/arkinglab/active/projects/scd.meta/analyses/scd.meta.ver2/ARIC.b35.b37.liftover/aric.f3v2.imputed.b37 --clump ", paste("SCD.",trait,".overlap.SNP.MIpval",sep="")," --clump-p1 ",format(i, scientific=F)," --clump-p2 0.05 --clump-r2 ",ifelse(i==5e-8, 0, 0.05)," --clump-kb 1000 --clump-field pvalue --clump-verbose --out ",trait,".scd.",format(i, scientific=F), sep=""))
