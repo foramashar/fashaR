@@ -17,7 +17,7 @@ CoxResult=function(coxph.model, rowname.suffix, colname.suffix=NULL, confint=FAL
 	results=coef(summary(coxph.model))
 	if (confint==TRUE){results=cbind(results, summary(coxph.model)$conf.int[,3:4])}
 	if (!is.null(prettyDig)){
-`		results=apply(results, 2, function(x){prettyNum(as.numeric(x),digits=prettyDig)})
+		results=apply(results, 2, function(x){prettyNum(as.numeric(x),digits=prettyDig)})
 	}
 	test.n=paste(coxph.model$n, " (",coxph.model$nevent,")", sep="" )
 	results=cbind(results, test.n)
@@ -27,4 +27,3 @@ CoxResult=function(coxph.model, rowname.suffix, colname.suffix=NULL, confint=FAL
 	}
 	return(results)
 }
-
