@@ -13,17 +13,20 @@
 #' test.results=CoxResult(test.coxph, "all", prettyDig=3)
 
 CoxResult=function(coxph.model, rowname.suffix, colname.suffix=NULL, confint=FALSE, prettyDig=NULL){
-	require(survival)
-	results=coef(summary(coxph.model))
-	if (confint==TRUE){results=cbind(results, summary(coxph.model)$conf.int[,3:4])}
-	if (!is.null(prettyDig)){
-		results=apply(results, 2, function(x){prettyNum(as.numeric(x),digits=prettyDig)})
-	}
-	test.n=paste(coxph.model$n, " (",coxph.model$nevent,")", sep="" )
-	results=cbind(results, test.n)
-	row.names(results)=paste(row.names(results),rowname.suffix, sep=".")
-	if (!is.null(colname.suffix)){
-		colnames(results)=paste(colnames(results),colname.suffix, sep=".")
-	}
-	return(results)
+        require(survival)
+        results=coef(summary(coxph.model))
+        if (confint==TRUE){results=cbind(results, summary(coxph.model)$conf.int[,3:4])}
+		
+        if (!is.null(prettyDig)){
+                test.results=apply(results, 2, function(x){prettyNum(as.numeric(x),digits=prettyDig)})
+        }
+		row.names(test.results)=row.names(results)
+		results=test.results
+        test.n=paste(coxph.model$n, " (",coxph.model$nevent,")", sep="" )
+        results=cbind(results, test.n)
+        row.names(results)=paste(row.names(results),rowname.suffix, sep=".")
+        if (!is.null(colname.suffix)){
+                colnames(results)=paste(colnames(results),colname.suffix, sep=".")
+        }
+        return(results)
 }
