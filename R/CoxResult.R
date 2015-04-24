@@ -14,11 +14,10 @@
 CoxResult=function(coxph.model, rowname.suffix, colname.suffix=NULL, confint=FALSE){
 	require(survival)
 	results=coef(summary(coxph.model))
-	if (confint==TRUE){results=cbind(results, summary(coxph.model)$conf.int[,3:4],coxph.model$n,coxph.model$nevent)}
-	else {
-		test.n=paste(coxph.model$n, " (",coxph.model$nevent,")", sep="" )
-		results=cbind(results, test.n)
-	}
+	if (confint==TRUE){results=cbind(results, summary(coxph.model)$conf.int[,3:4])}
+	results=apply(results, 2, function(x){prettyNum(as.numeric(x),digits=3)})
+	test.n=paste(coxph.model$n, " (",coxph.model$nevent,")", sep="" )
+	results=cbind(results, test.n)
 	row.names(results)=paste(row.names(results),rowname.suffix, sep=".")
 	if (!is.null(colname.suffix)){
 		colnames(results)=paste(colnames(results),colname.suffix, sep=".")
