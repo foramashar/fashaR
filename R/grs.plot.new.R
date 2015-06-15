@@ -39,6 +39,7 @@ function (w, b, s, af, col.by=NULL, text = NULL, textpos = NULL, textcex = 0.5,
         text((w/ws)[f], (b/ws)[f], text[f], pos = textpos[f], 
             cex = textcex)
     }
+    test.col="black"
 	if (!is.null(col.by)) {
 		if(col.by=="af"){
 			af[af>0.5]=1-af[af>0.5]
