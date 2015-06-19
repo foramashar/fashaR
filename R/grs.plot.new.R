@@ -14,7 +14,7 @@
 
 grs.plot.new=
 function (w, b, s, af, col.by=NULL, text = NULL, textpos = NULL, textcex = 0.5, 
-    alpha = 0.05, display.legend=FALSE) 
+    alpha = 0.05, display.legend=FALSE, display.pvaldir=FALSE) 
 {
     f <- !is.na(w) & !is.na(b) & !is.na(s) & !is.na(af)
     ws <- sign(w)
@@ -64,7 +64,7 @@ function (w, b, s, af, col.by=NULL, text = NULL, textpos = NULL, textcex = 0.5,
 		
 	}
 	mtext(paste("ahat=", prettyNum(ahat, digits=3)),side=3, line=-1.5,cex=0.8, font=2)
-	mtext(paste("PvalDirection=", prettyNum(chisq.test(table(test$Concordance))$p.value, digits=3)),side=1, line=-1.5,cex=0.8, font=2)
+	if (display.pvaldir) {mtext(paste("PvalDirection=", prettyNum(chisq.test(table(test$Concordance))$p.value, digits=3)),side=1, line=-1.5,cex=0.8, font=2)}
 }
 
 
