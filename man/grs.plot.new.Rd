@@ -5,7 +5,8 @@
 \title{Updated grs.plot function from package gtx}
 \usage{
 grs.plot.new(w, b, s, af, col.by = NULL, text = NULL, textpos = NULL,
-  textcex = 0.5, alpha = 0.05, display.legend = FALSE)
+  textcex = 0.5, alpha = 0.05, display.legend = FALSE,
+  display.pvaldir = FALSE)
 }
 \arguments{
 \item{col.by}{name of column in dataset to color by (for eg: af)}
