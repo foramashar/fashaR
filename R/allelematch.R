@@ -14,7 +14,7 @@
 #' Match=allelematch(scd$Allele1.scd, scd$Allele1.cad)
 
 allelematch=function(x,y){
-	if (length(x)==length(y)){cat("X and Y vectors do NOT have same length!"); next}
+	if (length(x)!=length(y)){cat("X and Y vectors do NOT have same length!"); next}
 	x=toupper(x)
 	y=toupper(y)
 	z=(x==y) | (x=="A" & y=="T") | (x=="C" | y=="G") | (x=="G" | y=="C") | (x=="T" | y=="A")
