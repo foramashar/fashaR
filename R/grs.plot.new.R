@@ -11,7 +11,7 @@
 #' @examples
 #' with(test, grs.plot.new(get(paste("Effect",trait, sep=".")), AdjustedSCD.Effect, StdErr,Freq1, col.by="af"))
 
-
+require(gtx)
 grs.plot.new=
 function (w, b, s, af, col.by=NULL, text = NULL, textpos = NULL, textcex = 0.5, 
     alpha = 0.05, display.legend=FALSE, display.pvaldir=FALSE) 

@@ -13,6 +13,7 @@
 #'
 #' @seealso plotrix
 #'
+require(plotrix)
 addtable2plot.new=function (x, y = NULL, table, lwd = par("lwd"), bty = "n", bg = par("bg"), 
     cex = 1, xjust= 0, yjust = 1, xpad = 0.1, ypad = 0.5, box.col = par("fg"), 
     text.col = par("fg"),col.rowname = par("fg"),col.colname = par("fg"), display.colnames = TRUE, display.rownames = FALSE, 
