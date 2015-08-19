@@ -4,7 +4,8 @@
 \alias{makeclumps.custom.MAF}
 \title{Function to make the SNP clumps at different Pvalue cutoffs}
 \usage{
-makeclumps.custom.MAF(trait, clumpfile, outfilename, MAF = 0.05)
+makeclumps.custom.MAF(trait, clumpfile, outfilename, MAF = 0.05, RSQ = 0.01,
+  DIST = 1000)
 }
 \arguments{
 \item{trait}{Trait to compare SCD results to}
