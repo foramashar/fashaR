@@ -8,6 +8,7 @@
 #'
 
 permp=function(testnull, testdata){
+	testnull=na.omit(testnull)
 	test=sapply(testdata, function(x){
 		if (is.na(x)){
                   return(NA) 
