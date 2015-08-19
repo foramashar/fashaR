@@ -9,7 +9,9 @@
 
 permp=function(testnull, testdata){
 	test=sapply(testdata, function(x){
-		if (x<min(testnull)){
+		if (is.na(x)){
+                  return(NA) 
+		} else if (x<min(testnull)){
 			return("<0.01")
 		} else {
 			return(as.character(table(x<testnull)["FALSE"]/length(na.omit(testnull))))
