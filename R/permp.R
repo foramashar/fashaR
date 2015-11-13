@@ -8,12 +8,13 @@
 #'
 
 permp=function(testnull, testdata){
+	numperm=length(testnull)
 	testnull=na.omit(testnull)
 	test=sapply(testdata, function(x){
 		if (is.na(x)){
                   return(NA) 
 		} else if (x<min(testnull)){
-			return("<0.01")
+			return(paste0("<",1/numperm)
 		} else {
 			return(as.character(table(x<testnull)["FALSE"]/length(na.omit(testnull))))
 		}
