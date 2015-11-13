@@ -14,7 +14,7 @@ permp=function(testnull, testdata){
 		if (is.na(x)){
                   return(NA) 
 		} else if (x<min(testnull)){
-			return(paste0("<",1/numperm)
+			return(paste0("<",1/numperm))
 		} else {
 			return(as.character(table(x<testnull)["FALSE"]/length(na.omit(testnull))))
 		}
