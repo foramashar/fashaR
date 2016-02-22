@@ -1,5 +1,5 @@
 #' Function to increase width of R on linux
-#'
+#' @export
 #' @return output Width of the window is changed
 #'
 
