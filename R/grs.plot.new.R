@@ -12,7 +12,7 @@
 #' with(test, grs.plot.new(get(paste("Effect",trait, sep=".")), AdjustedSCD.Effect, StdErr,Freq1, col.by="af"))
 
 grs.plot.new=
-function (w, b, s, af, col.by=NULL, text = NULL, textpos = NULL, textcex = 0.5, 
+function (w, b, s, af, col.by=NULL,col=NULL, text = NULL, textpos = NULL, textcex = 0.5, 
     alpha = 0.05, display.legend=FALSE, display.pvaldir=FALSE) 
 {
 	require(gtx)
@@ -39,7 +39,8 @@ function (w, b, s, af, col.by=NULL, text = NULL, textpos = NULL, textcex = 0.5,
         text((w/ws)[f], (b/ws)[f], text[f], pos = textpos[f], 
             cex = textcex)
     }
-    test.col="black"
+    if (!is.null(col)){test.col=col} else {test.col="black"}
+    #test.col="black"
 	if (!is.null(col.by)) {
 		if(col.by=="af"){
 			af[af>0.5]=1-af[af>0.5]

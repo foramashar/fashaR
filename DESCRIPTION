@@ -1,5 +1,5 @@
 Package: fashaR
-Title: R package with Foram's functions (one line, title case)
+Title: R package with Foram's functions
 Version: 0.0.0.9000
 Authors@R: person("Foram", "Ashar", , "foramashar@gmail.com", role = c("aut", "cre"))
 Description: Personal package for Foram Ashar, with modifications to functions from other packages.
