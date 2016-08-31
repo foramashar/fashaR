@@ -4,8 +4,8 @@
 \alias{grs.plot.new}
 \title{Updated grs.plot function from package gtx}
 \usage{
-grs.plot.new(w, b, s, af, col.by = NULL, text = NULL, textpos = NULL,
-  textcex = 0.5, alpha = 0.05, display.legend = FALSE,
+grs.plot.new(w, b, s, af, col.by = NULL, col = NULL, text = NULL,
+  textpos = NULL, textcex = 0.5, alpha = 0.05, display.legend = FALSE,
   display.pvaldir = FALSE)
 }
 \arguments{
