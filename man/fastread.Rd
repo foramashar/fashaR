@@ -15,4 +15,3 @@ Function to read in large dataframes faster
 \seealso{
 gtx, grs.plot
 }
-

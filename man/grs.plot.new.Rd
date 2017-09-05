@@ -23,4 +23,3 @@ with(test, grs.plot.new(get(paste("Effect",trait, sep=".")), AdjustedSCD.Effect,
 \seealso{
 gtx, grs.plot
 }
-

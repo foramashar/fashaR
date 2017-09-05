@@ -13,4 +13,3 @@ output Width of the window is changed
 \description{
 Function to increase width of R on linux
 }
-

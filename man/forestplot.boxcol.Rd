@@ -25,4 +25,3 @@ col=meta.colors(box=c(NA, rep("royalblue",4),NA,rep("red",4),NA, rep("purple3",4
 \seealso{
 rmeta, forestplot
 }
-

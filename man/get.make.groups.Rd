@@ -15,4 +15,3 @@ Updated version of make.groups
 \seealso{
 lattice
 }
-

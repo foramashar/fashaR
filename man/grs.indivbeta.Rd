@@ -25,4 +25,3 @@ ahat from function grs.summary in package gtx
 \seealso{
 gtx, grs.plot
 }
-

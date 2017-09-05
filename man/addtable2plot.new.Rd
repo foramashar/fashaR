@@ -36,4 +36,3 @@ Updated function to add plot to table
 \seealso{
 plotrix
 }
-

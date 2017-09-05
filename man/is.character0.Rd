@@ -19,4 +19,3 @@ and of length 0
 }
 \keyword{character}
 \keyword{zero}
-

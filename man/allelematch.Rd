@@ -20,4 +20,3 @@ but does NOT account for snps with only A/T or C/G alleles.
 \examples{
 Match=allelematch(scd$Allele1.scd, scd$Allele1.cad)
 }
-

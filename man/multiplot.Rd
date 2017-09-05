@@ -25,4 +25,3 @@ Function to allow for plotting mutliple plots on
 same ggplot figure
 Stolen directly from here http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/
 }
-

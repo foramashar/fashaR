@@ -19,4 +19,3 @@ Builds on grs.summary function from package gtx
 \seealso{
 gtx, grs.plot
 }
-

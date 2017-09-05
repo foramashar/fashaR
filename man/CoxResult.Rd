@@ -28,4 +28,3 @@ Function to tidy up results from CoxPH model
 test.coxph=coxph(Surv(DNA.visit.FUTIME.DTH, DEAD12) ~ GENDER+resid.mtDNA+DNA.visit.AGE+CENTER, data=test)
 test.results=CoxResult(test.coxph, "all", prettyDig=3)
 }
-
