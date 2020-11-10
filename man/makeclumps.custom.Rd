@@ -20,4 +20,3 @@ Function to make the SNP clumps at different Pvalue cutoffs
 \seealso{
 gtx, grs.plot
 }
-

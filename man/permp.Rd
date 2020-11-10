@@ -20,4 +20,3 @@ output Vector of permuted pvalues
 \description{
 Fuction to compute Pval from given null distribution
 }
-

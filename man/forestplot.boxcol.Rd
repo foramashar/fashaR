@@ -5,10 +5,23 @@
 \title{Modified forestplot function to allow for different colored
 boxes}
 \usage{
-forestplot.boxcol(labeltext, mean, lower, upper, align = NULL,
-  is.summary = FALSE, clip = c(-Inf, Inf), xlab = "", zero = 0,
-  graphwidth = unit(2, "inches"), col = meta.colors(), xlog = FALSE,
-  xticks = NULL, boxsize = NULL, ...)
+forestplot.boxcol(
+  labeltext,
+  mean,
+  lower,
+  upper,
+  align = NULL,
+  is.summary = FALSE,
+  clip = c(-Inf, Inf),
+  xlab = "",
+  zero = 0,
+  graphwidth = unit(2, "inches"),
+  col = meta.colors(),
+  xlog = FALSE,
+  xticks = NULL,
+  boxsize = NULL,
+  ...
+)
 }
 \value{
 Graphical output
@@ -25,4 +38,3 @@ col=meta.colors(box=c(NA, rep("royalblue",4),NA,rep("red",4),NA, rep("purple3",4
 \seealso{
 rmeta, forestplot
 }
-

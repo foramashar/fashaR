@@ -22,4 +22,3 @@ print(factor2num(test))
 }
 \keyword{factor}
 \keyword{numeric}
-

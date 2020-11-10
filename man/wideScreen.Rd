@@ -4,8 +4,9 @@
 \alias{wideScreen}
 \title{Function to increase width of R on linux}
 \usage{
-wideScreen(howWide = as.numeric(strsplit(system("stty size", intern = T),
-  " ")[[1]])[2])
+wideScreen(
+  howWide = as.numeric(strsplit(system("stty size", intern = T), " ")[[1]])[2]
+)
 }
 \value{
 output Width of the window is changed
@@ -13,4 +14,3 @@ output Width of the window is changed
 \description{
 Function to increase width of R on linux
 }
-

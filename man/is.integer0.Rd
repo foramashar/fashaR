@@ -17,4 +17,3 @@ Function to check if object is an integer of length 0
 }
 \keyword{integer}
 \keyword{zero}
-

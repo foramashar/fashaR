@@ -4,12 +4,29 @@
 \alias{addtable2plot.new}
 \title{Updated function to add plot to table}
 \usage{
-addtable2plot.new(x, y = NULL, table, lwd = par("lwd"), bty = "n",
-  bg = par("bg"), cex = 1, xjust = 0, yjust = 1, xpad = 0.1,
-  ypad = 0.5, box.col = par("fg"), text.col = par("fg"),
-  col.rowname = par("fg"), col.colname = par("fg"),
-  display.colnames = TRUE, display.rownames = FALSE, hlines = FALSE,
-  vlines = FALSE, title = NULL, text.font = NULL)
+addtable2plot.new(
+  x,
+  y = NULL,
+  table,
+  lwd = par("lwd"),
+  bty = "n",
+  bg = par("bg"),
+  cex = 1,
+  xjust = 0,
+  yjust = 1,
+  xpad = 0.1,
+  ypad = 0.5,
+  box.col = par("fg"),
+  text.col = par("fg"),
+  col.rowname = par("fg"),
+  col.colname = par("fg"),
+  display.colnames = TRUE,
+  display.rownames = FALSE,
+  hlines = FALSE,
+  vlines = FALSE,
+  title = NULL,
+  text.font = NULL
+)
 }
 \arguments{
 \item{x}{Numeric vectors for position coord.}
@@ -36,4 +53,3 @@ Updated function to add plot to table
 \seealso{
 plotrix
 }
-

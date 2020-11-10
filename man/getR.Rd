@@ -20,4 +20,3 @@ A and B intensities
 \examples{
 test2=getR(test)
 }
-

@@ -21,4 +21,3 @@ that allows coloring by allele frequency.
 \examples{
 test2=makequintiles(test, resid.mtDNA)
 }
-
